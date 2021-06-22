@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400&display=swap');
+
+*, html, body {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+@media (min-width: 376px) and (max-width: 768px){
+    .fondo{
+        background: #F79D65;
+        background: linear-gradient(90deg,rgba(247, 157, 101,1) 11%, rgba(128, 255, 219,1) 100%);
+        padding: 5px 30px;
+    }
+}
+
+@media (max-width: 375px) {
+.fondo{
+        background: #F72585;
+        background: linear-gradient(90deg,rgba(247,37,133,1) 11%, rgba(76,201,240,1) 100%);
+        padding: 5px 30px;
+    }
+}
+
+@media (min-width: 769px) {
+    .fondo{
+        background: rgb(36,81,166);
+        background: linear-gradient(90deg, rgba(36,81,166,1) 11%, rgba(68,129,210,1) 100%);
+        padding: 5px 30px;
+        }
+    }
+
+
+/* body{
+    background: rgb(36,81,166);
+        background: linear-gradient(90deg, rgba(36,81,166,1) 11%, rgba(68,129,210,1) 100%);
+        padding: 5px 30px;
+} */
+
+h1 {
+    font-weight: lighter;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+input, button {
+    width: 35%;
+    padding: 10px;
+    color: black;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 10px;
+    border: 0px;
+}
+
+button, video{
+    margin-right: 10px;
+}
+
+img {
+    border-radius: 5px;
+    width: 150px;
+    height: 150px;
+}
+
+ol {
+    text-align: left;
+}
