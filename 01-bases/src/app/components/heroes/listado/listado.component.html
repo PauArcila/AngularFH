@@ -4,9 +4,13 @@
     <li>{{heroe}}</li>
 </ul>
 
-<div *ngIf="heroeBorrado!==''">
+<div *ngIf="heroeBorrado; else noBorrado">
     <h4>Héroe Borrado:&nbsp;<span>{{heroeBorrado}}</span></h4>
 </div>
+
+<ng-template #noBorrado>
+    <h4>No ha borrado nada</h4>
+</ng-template>
 
 <button (click)="eliminarHeroe()">
     Borrar
