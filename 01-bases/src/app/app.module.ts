@@ -1,22 +1,25 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContadorComponent } from './components/contador/contador.component';
-import { HeroeComponent } from './components/heroes/heroe/heroe.component';
-import { ListadoComponent } from './components/heroes/listado/listado.component';
+import { ContadorModule } from './components/contador/contador.module';
+//import { ContadorComponent } from './components/contador/contador.component';
+import { HeroesModule } from './components/heroes/heroes.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContadorComponent,
-    HeroeComponent,
-    ListadoComponent
+ //   ContadorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HeroesModule,
+    ContadorModule
+  ],
+  schemas:[
+    CUSTOM_ELEMENTS_SCHEMA
   ],
   providers: [],
   bootstrap: [AppComponent]
