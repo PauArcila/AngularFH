@@ -15,18 +15,18 @@ export class MainPageComponent{
     {nombre: 'Vegeta', poder: 15000}
   ];
 
-  nuevo: Personaje={
-    nombre: '',
-    poder: 0
+  nuevo: Personaje = {
+    nombre: '', poder: 0
   }
 
-  agregar(){
-    console.log(this.nuevo);
-    this.personajes.push(this.nuevo);
-    this.nuevo = {nombre: '', poder: 0};
-  }
 
   cambiarNom(event:any){
     console.log(event.target.value);
+  }
+
+  agregarNvoPersonaje(argumento: Personaje){
+    console.log('main page component');
+    this.personajes.push(argumento);
+    console.table(this.personajes);
   }
 }

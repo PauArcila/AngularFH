@@ -5,17 +5,6 @@
        <app-personajes [personajes]="personajes"></app-personajes>
     </div>
     <div class="col">
-        <h3>Agregar</h3><small>{{nuevo.nombre}}</small>
-        <hr>
-        <form (ngSubmit)="agregar()">
-            
-            <input type="text" placeholder="Nombre" name="nombre"
-            [(ngModel)]="nuevo.nombre">
-
-            <input type="number" placeholder="Poder" name="poder"
-            [(ngModel)]="nuevo.poder">
-
-            <button type="submit" >Agregar</button>
-        </form>
+       <app-agregar [nuevo]="nuevo" (onNewPersonaje)="agregarNvoPersonaje($event)"></app-agregar>
     </div>
 </div>
