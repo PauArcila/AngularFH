@@ -11,7 +11,8 @@ export class PorPaisComponent {
   termino: string = '';
   hayError: boolean = false;
   paises: CountryResponse[]=[];
-
+  title: string = 'País';
+  
   constructor(private paisService: PaisService) {
   }
 
