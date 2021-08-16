@@ -23,5 +23,10 @@ export class PaisService {
     const url = `${this.apiUrl}/capital/${termino}`;
     return this.http.get<CountryResponse[]>(url);
   }
+
+  getCountryByAlpha(code: string){
+    const url = `${this.apiUrl}/alpha/${code}`;
+    return this.http.get<CountryResponse>(url);
+  }
   
 }
