@@ -5,13 +5,13 @@
       </div>
 </div>
 <ng-template #divPais>
-    <div class="container container-fluid m-5 mb-4 bg-light rounded-3 border shadow">
+    <div class="container container-fluid m-5 mb-4 bg-light rounded-3 border shadow animate__animated animate__fadeIn animate__faster">
         <div class="container-fluid py-5">
             <h1 class="display-6 fw-bold">{{pais.translations.es}}</h1>
-            <span class="badge bg-primary mr-1">{{pais.translations.ja}}</span>
-            <span class="badge bg-primary mr-1">{{pais.translations.de}}</span>
-            <span class="badge bg-primary mr-1">{{pais.translations.fa}}</span>
-            <span class="badge bg-primary mr-1">{{pais.translations.br}}</span>
+            <span class="badge rounded-pill bg-secondary mr-1">{{pais.translations.ja}}</span>
+            <span class="badge rounded-pill bg-secondary mr-1">{{pais.translations.de}}</span>
+            <span class="badge rounded-pill bg-secondary mr-1">{{pais.translations.fa}}</span>
+            <span class="badge rounded-pill bg-secondary mr-1">{{pais.translations.br}}</span>
             <hr>
             <img class="small-flag" alt="bandera" [src]="pais.flag">
             &nbsp;&nbsp;<span>Capital: {{pais.capital}}</span>
