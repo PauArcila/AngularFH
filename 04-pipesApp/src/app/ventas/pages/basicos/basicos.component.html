@@ -1,1 +1,44 @@
-<p>basicos works!</p>
+<div class="text-layout">
+    <h1>Pipes Básicos</h1>
+    <p>Pipes incluídos en Angular, usualmente en el Common Module</p>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-4">
+        <p-card header="Uppercase"
+            [subheader]="nombreLower | uppercase ">
+        </p-card>
+    </div>
+    <div class="p-col-4">
+        <p-card header="Lowercase"
+            [subheader]="nombreUpper | lowercase ">
+        </p-card>
+    </div>
+    <div class="p-col-4">
+        <p-card header="Titlecase"
+            [subheader]="nombreCompleto | titlecase ">
+        </p-card>
+    </div>
+</div>
+
+<div class="text-layout">
+    <h1>Date | Fecha | Pipe </h1>
+    <p>Pipe para mostrar fechas</p>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-4">
+        <p-card >
+        </p-card>
+    </div>
+    <div class="p-col-4">
+        <p-card >
+        </p-card>
+    </div>
+    <div class="p-col-4">
+        <p-card header="Titlecase"
+            [subheader]="nombreCompleto | titlecase ">
+        </p-card>
+    </div>
+</div>
+
