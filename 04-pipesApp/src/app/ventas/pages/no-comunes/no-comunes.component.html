@@ -1,6 +1,6 @@
 <div class="text-layout">
     <h1>Pipes no tan comunes</h1>
-    <p>Pipes incluídos en ANgular, usualmente en el Common Module.</p>
+    <p>Pipes incluídos en Angular, usualmente en el Common Module.</p>
 </div>
 
 <div class="p-grid card-container">
@@ -8,12 +8,26 @@
         <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
             Saludos {{nombre}}, es un placer {{genero | i18nSelect: invitaMapa}}
             a nuestro evento.
+            <div style="display: flex; justify-content: flex-end">
+                <button pButton pRipple type="button" icon="pi pi-user" class="p-button-rounded p-button-outlined p-button-help"
+                    (click)="cambiarPersona()"></button>
+            </div>
         </p-fieldset>
     </div>
     <div class="p-col p-md-6 p-sm-9 card">    
         <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
             Actualmente {{clientes.length | i18nPlural: clientesMapa}}
+        <div style="display: flex; justify-content: flex-end">
+            <button pButton pRipple type="button" icon="pi pi-user-minus" class="p-button-rounded p-button-outlined p-button-help"
+                (click)="quitarPersona()"></button>&nbsp;&nbsp;
+            <button pButton pRipple type="button" icon="pi pi-user-plus" class="p-button-rounded p-button-outlined p-button-help"
+                (click)="agregarPersona()"></button>
+        </div>
+        <div style="display: flex; justify-content: flex-end">
+           
+        </div>
         </p-fieldset>
+        
     </div>
 
 </div>
