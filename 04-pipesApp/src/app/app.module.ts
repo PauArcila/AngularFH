@@ -1,6 +1,6 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import  localeEs  from '@angular/common/locales/es-CL';
 import  localeFr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
@@ -20,6 +20,7 @@ import { VentasModule } from './ventas/ventas.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     PrimeNgModule,
     SharedModule,

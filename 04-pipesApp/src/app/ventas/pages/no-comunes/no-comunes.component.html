@@ -1,1 +1,22 @@
-<p>no-comunes works!</p>
+<div class="text-layout">
+    <h1>Pipes no tan comunes</h1>
+    <p>Pipes incluídos en ANgular, usualmente en el Common Module.</p>
+</div>
+
+<div class="p-grid card-container">
+    <div class="p-col p-md-6 p-sm-9 card">    
+        <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+            Saludos {{nombre}}, es un placer {{genero | i18nSelect: invitaMapa}}
+            a nuestro evento.
+        </p-fieldset>
+    </div>
+    <div class="p-col p-md-6 p-sm-9 card">    
+        <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+            Actualmente {{clientes.length | i18nPlural: clientesMapa}}
+        </p-fieldset>
+    </div>
+
+</div>
+
+
+
