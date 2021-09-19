@@ -8,3 +8,12 @@ html, body {
 .text-layout{
     color: var(--text-color);
 }
+
+.card-container{
+    display: flex;
+    gap: 1rem;
+}
+
+.card{
+    flex-grow: 1;
+}

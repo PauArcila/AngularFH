@@ -12,5 +12,5 @@ export class BasicosComponent {
  nombreUpper: string = 'PAULILITH';
  nombreCompleto: string = 'paU lilith';
 
- fecha: Date = new Date();
+ fecha: Date = new Date();//día de hoy
 }
