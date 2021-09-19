@@ -1,1 +1,28 @@
-<p>numeros works!</p>
+<div class="text-layout">
+    <h1></h1>
+    <p></p>
+</div>
+
+
+<div class="p-grid card-container">
+    <div class="p-col-4 card">
+        <p-card header="Ventas Netas"
+        subheader="del año actual">
+        <i class="pi pi-dollar"></i>
+        {{ventasNetas | number: '1.0-0'}}
+    </p-card><!--  deja toda la parte entera y cero a cero decimales, ver mas formatos en angular.io -->
+    </div>
+    <div class="p-col-4 card">
+        <p-card header="Ventas Brutas"
+        subheader="del año actual">
+        {{ventasNetas + 2000000 | currency: 'CLP'}}
+    </p-card><!--  deja toda la parte entera y cero a cero decimales, ver mas formatos en angular.io -->
+    </div>
+
+    <div class="p-col-4 card">
+        <p-card header="Ganancia porcentual"
+        subheader="del año actual">
+        {{porcentaje | percent: '1.2-2'}}
+    </p-card><!--  deja toda la parte entera y cero a cero decimales, ver mas formatos en angular.io -->
+    </div>
+</div>
