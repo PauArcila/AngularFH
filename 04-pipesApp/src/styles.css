@@ -12,8 +12,10 @@ html, body {
 .card-container{
     display: flex;
     gap: 1rem;
+    margin-top: 1rem;
 }
 
-.card{
+.card {
     flex-grow: 1;
+    width: 50%;
 }

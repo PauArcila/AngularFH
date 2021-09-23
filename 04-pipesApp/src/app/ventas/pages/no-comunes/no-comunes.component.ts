@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-no-comunes',
@@ -16,7 +17,7 @@ export class NoComunesComponent {
   }
 
   //i18nPlural
-  clientes: string[] = ['Kallfu', 'Fidel', 'Verona'];
+  clientes: string[] = ['Kallfu', 'Fidel', 'Verona', 'Ayilen'];
  
   clientesMapa = {
     '=0': 'no tenemos clientes esperando.',
@@ -45,6 +46,26 @@ export class NoComunesComponent {
       }     
   }
 
+  //keyvalue
+  persona = {
+    nombre: 'Lilith',
+    edad: 20,
+    direccion: 'Santiasko'
+  }
+
+  //json pipe
+  heroes = [
+    {nombre: 'batman', vuela: true},
+    {nombre: 'aquaman', vuela: false}
+  ]
   
+  //async pipe
+  miObservable = interval(1000);
+  valorPromesa = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Tenemos data de promesa')
+    }, 3500);
+  })
+
 
 }
