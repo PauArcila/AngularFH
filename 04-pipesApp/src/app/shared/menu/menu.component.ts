@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit {
       {label: 'Números', icon: 'pi pi-align-dollar', routerLink: 'numeros'},
       {label: 'No comunes', icon: 'pi pi-globe', routerLink: 'no-comunes'}
     ]},
-    {label: 'Pipes personalizados', icon: 'pi pi-cog', routerLink: '/'}
+    {label: 'Pipes personalizados', icon: 'pi pi-cog', routerLink: 'ordenar'}
     ];
   }
 
