@@ -1,6 +1,4 @@
-import { ElementAst } from "@angular/compiler";
 import { Pipe, PipeTransform } from "@angular/core";
-import { Validators } from "@angular/forms";
 
 @Pipe({
  name: 'mayusculas'

@@ -1,4 +1,57 @@
 <div class="text-layout">
     <h1>Pipes personalizados</h1>
-    <p>Pipes creados {{'manualmente' | mayusculas: true}}</p>
+    <p>Pipes creados {{'manualmente' | mayusculas: enMayusculas}}</p>
+
+   
+</div>
+
+<p-toolbar class="mt-1">
+    <div class="p-toolbar-group-left">
+       
+    </div>
+    
+    <div class="p-toolbar-group-right">
+        <button pButton pRipple
+        label="toggle mayúsculas"
+        (click)="cambiar()"
+        class="p-button-warning mr-1">
+        </button>
+
+        <button pButton pRipple icon="pi pi-sort"
+        label="Por nombre"
+        class="p-button-info mr-1"></button>
+
+        <button pButton pRipple icon="pi pi-sort"
+        label="Valores"
+        class="p-button-success mr-1"></button> 
+        
+        <button pButton pRipple icon="pi pi-sort"
+        label="Por color"
+        class="p-button-help mr-1"></button>
+    </div>
+
+</p-toolbar>
+
+<div class="grid">
+    <div class="col mt-1">
+        <p-table [value]="[]" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+                <tr>
+                    <td>{{product.code}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.category}}</td>
+                    <td>{{product.quantity}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+        
+    </div>
 </div>
