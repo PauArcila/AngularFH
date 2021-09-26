@@ -14,41 +14,70 @@
         <button pButton pRipple
         label="toggle mayúsculas"
         (click)="cambiar()"
-        class="p-button-warning mr-1">
+        class="p-button-warning p-button-raised p-button-text  mr-1">
         </button>
-
-        <button pButton pRipple icon="pi pi-sort"
-        label="Por nombre"
-        class="p-button-info mr-1"></button>
-
-        <button pButton pRipple icon="pi pi-sort"
-        label="Valores"
-        class="p-button-success mr-1"></button> 
-        
-        <button pButton pRipple icon="pi pi-sort"
-        label="Por color"
-        class="p-button-help mr-1"></button>
     </div>
 
 </p-toolbar>
 
 <div class="grid">
     <div class="col mt-1">
-        <p-table [value]="[]" responsiveLayout="scroll">
+        <p-table [value]="heroes | ordenar: ordenarPor" responsiveLayout="scroll">
             <ng-template pTemplate="header">
                 <tr>
-                    <th>Code</th>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Quantity</th>
+                    <th> <button pButton pRipple icon="pi pi-sort" 
+                            label="Por nombre" (click)="cambiarOrden('nombre')"
+                            class="p-button-info p-button-raised p-button-text  mr-1">
+                        </button></th>
+                    <th><button pButton pRipple icon="pi pi-sort"
+                            label="Vuela" (click)="cambiarOrden('vuela')"
+                            class="p-button-success p-button-raised p-button-text  mr-1">
+                        </button> </th>
+                    <th> <button pButton pRipple icon="pi pi-sort" 
+                            label="Por color" (click)="cambiarOrden('color')"
+                            class="p-button-help p-button-raised p-button-text  mr-1">
+                        </button></th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-product>
+            <ng-template pTemplate="body" let-heroe>
                 <tr>
-                    <td>{{product.code}}</td>
-                    <td>{{product.name}}</td>
-                    <td>{{product.category}}</td>
-                    <td>{{product.quantity}}</td>
+                    <td>{{heroe.nombre | titlecase}}</td>
+                    <td>{{heroe.vuela | vuela | titlecase}}
+                        <i *ngIf="heroe.vuela" class="pi pi-check"></i>
+                        <i *ngIf="!heroe.vuela" class="pi pi-times"></i>
+                    </td>
+                    <td>{{heroe.color}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+        
+    </div>
+</div>
+
+
+<div class="grid">
+    <div class="col mt-1">
+        <p-table [value]="heroes | slice:0" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="nombre">Nombre<p-sortIcon field="nombre"></p-sortIcon></th>
+                    <th pSortableColumn="vuela">Vuela<p-sortIcon field="vuela"></p-sortIcon></th>
+                    <th pSortableColumn="color">Color<p-sortIcon field="color"></p-sortIcon></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-heroe>
+                <tr>
+                    <td>{{heroe.nombre | titlecase}}</td>
+                    <td>
+                        <i *ngIf="heroe.vuela" class="pi pi-check"></i>
+                        <i *ngIf="!heroe.vuela" class="pi pi-times"></i>
+                    </td>
+                    <td>
+                        <p *ngIf="heroe.color===0">Rojo</p>
+                        <p *ngIf="heroe.color===1">Negro</p>
+                        <p *ngIf="heroe.color===2">Azul</p>
+                        <p *ngIf="heroe.color===3">Verde</p>
+                    </td>
                 </tr>
             </ng-template>
         </p-table>
