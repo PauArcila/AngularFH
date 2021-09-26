@@ -73,10 +73,7 @@
                         <i *ngIf="!heroe.vuela" class="pi pi-times"></i>
                     </td>
                     <td>
-                        <p *ngIf="heroe.color===0">Rojo</p>
-                        <p *ngIf="heroe.color===1">Negro</p>
-                        <p *ngIf="heroe.color===2">Azul</p>
-                        <p *ngIf="heroe.color===3">Verde</p>
+                        {{heroe.color | color | titlecase}}
                     </td>
                 </tr>
             </ng-template>
