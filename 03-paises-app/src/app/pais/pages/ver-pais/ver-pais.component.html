@@ -1,0 +1,29 @@
+<div class="alert alert-info" *ngIf="!pais; else divPais" ><!--*-->
+    <div class="d-flex align-items-center">
+        <strong>Cargando información...</strong>
+        <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+      </div>
+</div>
+<ng-template #divPais>
+    <div class="container container-fluid m-5 mb-4 bg-light rounded-3 border shadow animate__animated animate__fadeIn animate__faster">
+        <div class="container-fluid py-5">
+            <h1 class="display-6 fw-bold">{{pais.translations.es}}</h1>
+            <span class="badge rounded-pill bg-secondary mr-1">{{pais.translations.ja}}</span>
+            <span class="badge rounded-pill bg-secondary mr-1">{{pais.translations.de}}</span>
+            <span class="badge rounded-pill bg-secondary mr-1">{{pais.translations.fa}}</span>
+            <span class="badge rounded-pill bg-secondary mr-1">{{pais.translations.br}}</span>
+            <hr>
+            <img class="small-flag" alt="bandera" [src]="pais.flag">
+            &nbsp;&nbsp;<span>Capital: {{pais.capital}}</span>
+        <div class="pt-3">
+            <p>Este país posee {{pais.population | number }} habitantes,
+                su moneda es <em>{{pais.currencies[0].name}} </em>({{pais.currencies[0].symbol}}).
+                El idioma principal es {{pais.languages[0].nativeName}} y pertenece a la región de {{pais.region}}.
+            </p>
+        </div>
+          
+        </div>
+    </div>
+</ng-template>
+
+

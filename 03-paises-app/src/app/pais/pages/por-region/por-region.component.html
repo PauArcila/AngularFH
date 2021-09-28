@@ -1,0 +1,22 @@
+<h2 class="animate__animated animate__fadeIn animate__faster">Buscar por continente
+    <span class="fs-6">{{regionActiva | titlecase}}</span>
+</h2>
+<hr>
+
+<h5>Seleccione el continente</h5>
+
+<div class="row">
+    <div class="col">
+        <button *ngFor="let region of regiones"
+        [class]="setCssBtn(region)" 
+        (click)="activarRegion(region)">
+            {{region | titlecase}}
+        </button>
+    </div>
+</div>
+
+<div class="row" *ngIf="paises.length > 0">
+    <div class="col table-responsive">
+        <app-pais-tabla [paises]="paises"></app-pais-tabla>
+    </div>
+</div>
