@@ -5,19 +5,35 @@
     </div>
     <div>
       <h3>Buscador</h3>
-      <mat-form-field class="" appearance="outline" color="accent">
+      <mat-form-field class="" appearance="standard" color="accent">
         <mat-label>Superheroe buscado</mat-label>
+        
         <input type="text" 
             placeholder="Escoge uno" 
             aria-label="Superheroe buscado" 
             matInput [(ngModel)]="terminoBuscado"
             [matAutocomplete]="auto"
             (input)="buscando()">
-        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-            <mat-option *ngFor="let heroe of heroes" [value]="heroe">
+        
+            <mat-autocomplete autoActiveFirstOption 
+                #auto="matAutocomplete"
+                (optionSelected)="opcionSeleccionada($event)">
+            
+                <mat-option *ngFor="let heroe of heroes" [value]="heroe">
                 {{heroe.superhero}}
             </mat-option>
         </mat-autocomplete>
         </mat-form-field>
     </div>
+</div>
+
+<div>
+    <pre *ngIf="selectedHeroe; else name">
+    {{selectedHeroe | json}}
+    </pre>
+    <ng-template #name>
+        No se encontró
+    </ng-template>
+    
+
 </div>
