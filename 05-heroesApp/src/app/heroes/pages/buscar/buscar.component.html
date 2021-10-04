@@ -22,18 +22,22 @@
                 <mat-option *ngFor="let heroe of heroes" [value]="heroe">
                 {{heroe.superhero}}
             </mat-option>
+
+            <mat-option value="" *ngIf="heroes.length ===0 && terminoBuscado.trim().length>0">
+                No se encontró
+            </mat-option>
+
+
         </mat-autocomplete>
         </mat-form-field>
     </div>
 </div>
 
-<div>
-    <pre *ngIf="selectedHeroe; else name">
-    {{selectedHeroe | json}}
-    </pre>
-    <ng-template #name>
-        No se encontró
-    </ng-template>
-    
+<div fxLayout="column">
+   
+
+    <div *ngIf="selectedHeroe">
+        <app-card [heroe]="selectedHeroe"></app-card>
+    </div>
 
 </div>
