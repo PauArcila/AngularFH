@@ -180,9 +180,18 @@
       "superhero": "kallfu",
       "publisher": "DC Comics",
       "alter_ego": "es plomita",
-      "first_appearance": "tempranito",
+      "first_appearance": "tempranito EN LA MAÑANA",
       "characters": "el perrito",
       "alt_img": "no-image"
+    },
+    {
+      "id": "L2xGzv-",
+      "superhero": "qweq",
+      "publisher": "DC Comics",
+      "alter_ego": "qweq",
+      "first_appearance": "qwe",
+      "characters": "qwe",
+      "alt_img": "qwe"
     }
   ]
 }
