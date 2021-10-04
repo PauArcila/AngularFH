@@ -24,4 +24,8 @@ export class HeroesService {
   getSugerencias(terminoBuscado: string): Observable<Heroe[]>{
     return this.http.get<Heroe[]>(this.url+'?q='+terminoBuscado+'&_limit=6');
   }
+
+  createHeroe(heroe: Heroe): Observable<Heroe>{
+    return this.http.post<Heroe>(this.url, heroe);
+  }
 }
