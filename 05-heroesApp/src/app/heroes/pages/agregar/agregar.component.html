@@ -39,9 +39,16 @@
             <input matInput type="text"  [(ngModel)]="heroe.alt_img"  required>
         </mat-form-field>
         <br>
-        <button mat-raised-button color="accent" (click)="guardar()">
-            Guardar<mat-icon>how_to_reg</mat-icon>
-        </button>
+        <div fxLayout="row">
+            <button mat-raised-button color="warn" (click)="borrarHeroe()">
+                Eliminar<mat-icon>delete</mat-icon>
+            </button>
+            <span class="spacer"></span>
+            <button mat-raised-button color="accent" (click)="guardar()">
+                Guardar<mat-icon>how_to_reg</mat-icon>
+            </button>
+        </div>
+       
 
     </div>
 
