@@ -32,4 +32,8 @@ export class HeroesService {
   updateHeroe(heroe: Heroe): Observable<Heroe>{
     return this.http.put<Heroe>(this.url+'/'+heroe.id, heroe);
   }
+
+  deleteHeroe(id: string): Observable<any>{
+    return this.http.delete<Heroe>(this.url+'/'+id);
+  }
 }

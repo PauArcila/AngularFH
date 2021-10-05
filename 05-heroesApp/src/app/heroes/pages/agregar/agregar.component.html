@@ -40,7 +40,8 @@
         </mat-form-field>
         <br>
         <div fxLayout="row">
-            <button mat-raised-button color="warn" (click)="borrarHeroe()">
+            <button mat-raised-button color="warn" 
+            *ngIf="heroe.id" (click)="borrarHeroe()">
                 Eliminar<mat-icon>delete</mat-icon>
             </button>
             <span class="spacer"></span>

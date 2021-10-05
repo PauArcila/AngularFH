@@ -10,7 +10,11 @@ import { ConfirmarComponent } from '../../components/confirmar/confirmar.compone
 @Component({
   selector: 'app-agregar',
   templateUrl: './agregar.component.html',
-  styles: [
+  styles: [ 
+    `img {
+      width: 60%;
+      border-radius: 1rem;
+    }`
   ]
 })
 export class AgregarComponent implements OnInit {
@@ -35,11 +39,18 @@ export class AgregarComponent implements OnInit {
               public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    console.log(this.router.url);
+    if(!this.router.url.includes('editar')){
+      return;
+
+    }
+
     this.activatedRoute.params
     .pipe(
       switchMap(({id}) => this.heroesService.getHeroePorId(id))
     )
     .subscribe((heroe) => this.heroe = heroe);
+
   }
 
   guardar(){
@@ -68,11 +79,25 @@ export class AgregarComponent implements OnInit {
   }
 
   borrarHeroe(){
-    this.dialog.open(ConfirmarComponent, {
+    const dialog = this.dialog.open(ConfirmarComponent, {
       width: '300px',
-      height: '250px'
+      height: '250px',
+      data: this.heroe
     });
 
+    dialog.afterClosed().subscribe(
+      (result) => {
+         if (result) {
+           console.log('resultado', result);
+           this.heroesService.deleteHeroe(this.heroe.id!)
+            .subscribe(resp => {
+                this.mostrarSnackBar('Registro eliminado!')
+                this.router.navigate(['/heroes/listado']);
+             });
+         }
+      }
+    )
+    
   }
 
 }
