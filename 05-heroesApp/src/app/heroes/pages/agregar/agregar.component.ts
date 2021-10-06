@@ -91,7 +91,7 @@ export class AgregarComponent implements OnInit {
            console.log('resultado', result);
            this.heroesService.deleteHeroe(this.heroe.id!)
             .subscribe(resp => {
-                this.mostrarSnackBar('Registro eliminado!')
+                this.mostrarSnackBar('Registro eliminado!');
                 this.router.navigate(['/heroes/listado']);
              });
          }

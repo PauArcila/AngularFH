@@ -15,7 +15,7 @@ const routes = [
       { path: 'editar/:id', component: AgregarComponent },
       { path: 'buscar', component: BuscarComponent },
       { path: ':id', component: HeroeComponent },
-      { path: '**', redirectTo: 'home' }
+      { path: '**', redirectTo: 'listado' }
     ]
   }
 ]
