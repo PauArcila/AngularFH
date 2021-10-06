@@ -14,26 +14,26 @@ export class HeroesService {
   constructor(private  http: HttpClient) { }
 
   getHeroes(): Observable<Heroe[]>{
-    return this.http.get<Heroe[]>(this.url);
+    return this.http.get<Heroe[]>(this.url+'/heroes/');
   }
 
   getHeroePorId(id: string): Observable<Heroe> {
-    return this.http.get<Heroe>(this.url+'/'+id);
+    return this.http.get<Heroe>(this.url+'/heroes/'+id);
   }
 
   getSugerencias(terminoBuscado: string): Observable<Heroe[]>{
-    return this.http.get<Heroe[]>(this.url+'?q='+terminoBuscado+'&_limit=6');
+    return this.http.get<Heroe[]>(this.url+'/heroes?q='+terminoBuscado+'&_limit=6');
   }
 
   createHeroe(heroe: Heroe): Observable<Heroe>{
-    return this.http.post<Heroe>(this.url, heroe);
+    return this.http.post<Heroe>(this.url+'/heroes', heroe);
   }
 
   updateHeroe(heroe: Heroe): Observable<Heroe>{
-    return this.http.put<Heroe>(this.url+'/'+heroe.id, heroe);
+    return this.http.put<Heroe>(this.url+'/heroes/'+heroe.id, heroe);
   }
 
   deleteHeroe(id: string): Observable<any>{
-    return this.http.delete<Heroe>(this.url+'/'+id);
+    return this.http.delete<Heroe>(this.url+'/heroes/'+id);
   }
 }

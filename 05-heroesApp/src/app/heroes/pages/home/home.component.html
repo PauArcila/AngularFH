@@ -28,7 +28,8 @@
             <mat-icon>menu</mat-icon>
         </button>
         <span class="spacer"></span>
-        <button mat-button color="accent">
+        <span color="accent">Hola&nbsp;{{auth.usuario}}!</span>
+        <button mat-button color="accent" (click)="logout()">
             <mat-icon>logout</mat-icon>
         </button>
     </mat-toolbar>
