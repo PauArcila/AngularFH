@@ -19,7 +19,6 @@ export class AuthGuard implements CanLoad, CanActivate {
     // if ( this.authService.auth.id ) {
     //     return true;
     //   }
-
     // console.log('Bloqueado por el AuthGuard - CanActivate');
     // return false;
     return this.authService.verificaAutenticacion()
@@ -29,28 +28,24 @@ export class AuthGuard implements CanLoad, CanActivate {
                   this.router.navigate(['./auth/login']);
                 }
               })
-            )
+            );
   }
 
   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean> | boolean {
-
-      return this.authService.verificaAutenticacion()
-              .pipe(
-                tap( estaAutenticado => {
-                  if( !estaAutenticado ) {
-                    this.router.navigate(['./auth/login']);
-                  }
-                })
-              );
-
-
-      // if ( this.authService.auth.id ) {
-      //   return true;
-      // }
-
-      // console.log('Bloqueado por el AuthGuard - CanLoad');
-      // return false;
+    //   if ( this.authService.auth.id ) {
+    //     return true;
+    //   }
+    //  console.log('Bloqueado por el AuthGuard - CanLoad');
+    //   return false;
+    return this.authService.verificaAutenticacion()
+            .pipe(
+              tap( estaAutenticado => {
+                if( !estaAutenticado ) {
+                  this.router.navigate(['./auth/login']);
+                }
+              })
+            );
   }
 }

@@ -25,7 +25,6 @@ export class AuthService {
 
 
   verificaAutenticacion(): Observable<boolean> {
-
     if ( !localStorage.getItem('token') ) {
       return of(false);
     }
